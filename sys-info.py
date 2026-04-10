@@ -12,7 +12,18 @@ print(f"Current Username: {username}")
 
 # 2. Print current working directory
 directory = os.getcwd()
-print(f"Current Working Directory: {directory}")
+
+# Get current directory name
+current_dir = os.path.basename(directory)
+
+# Get parent path
+parent_path = os.path.dirname(directory)
+
+# Convert parent path to '>' format
+formatted_path = parent_path.strip(os.sep).replace(os.sep, ">")
+
+# Print final message
+print(f"{current_dir} is the current directory and it is inside {formatted_path}")
 
 # 3. Print OS name
 os_name = platform.system()
